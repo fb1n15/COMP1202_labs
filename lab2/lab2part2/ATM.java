@@ -1,53 +1,66 @@
-public class ATM
-{
+public class ATM {
 	Integer balance = new Integer(0);
 	Toolbox myToolbox = new Toolbox();
-
-
-	public static void main(String[] Args)
-	{
-		ATM myATM = new ATM();
-		myATM.go();
+	
+	public void withdraw() {
+		System.out.println("How much would you like to withdraw?");
+		Integer toWithdraw = new Integer(0);
+		toWithdraw = myToolbox.readIntegerFromCmd();
+		balance -= toWithdraw; //substract ammunt to withdraw from balance
+		System.out.print("Your new balance is: ");
+		System.out.println(balance);
+	}
+		
+	public void deposit() {
+		System.out.println("How much would you like to deposit?");
+		Integer toDeposit = new Integer(0);
+		toDeposit = myToolbox.readIntegerFromCmd();
+		balance += toDeposit;
+		System.out.print("Your new balance is: ");
+		System.out.println(balance);
 	}
 
-	public void go()
-	{
+	public void inquire() {
+		System.out.print("Your balance is: ");
+		System.out.println(balance);
+	}
+
+	public void quit() {
+		System.exit(0);
+	}
+	
+	public void go() {
 		System.out.println("Welcome to online ATM banking");
 		System.out.println("How much do you want in your account?");
-		System.out.println("Enter your number");
 		balance = myToolbox.readIntegerFromCmd();
 		System.out.println(balance);
-		System.out.println("What do you want to do?");
-		System.out.println("1 : Withdraw\n2 : Deposit\n3 : Inquire\n4 : Quit\nEnter your number");
-		Integer option = myToolbox.readIntegerFromCmd();
-		if(option==1)
-		{
-						System.out.println("*****************************************\nWithdrawal\n*****************************************\nHow much would you like to withdraw?\nEnter your number");
-			Integer toWithdraw = myToolbox.readIntegerFromCmd();
-			System.out.print("*****************************************\n         Your new balance is ");
-			balance -= toWithdraw;
-			System.out.println(balance);
-			System.out.println("*****************************************");		
+		String welcome = "What do you want to do?\n" +
+				"1 : Withdraw\n" +
+				"2 : Deposit\n" +
+				"3 : Inquire\n" +
+				"4 : Quit\n" +
+				"Enter your number";
+		//Even though "Enter your number" string is passed to the output by readIntegerFromCmd() it needs to be printed from go() method to pass succesfully through test harness
+		System.out.println(welcome);
+		Integer option = new Integer(0);
+		option = myToolbox.readIntegerFromCmd();
+		//calling apropriate methods of ATM class to users choice
+		if(option==1) {
+			withdraw();			
 		}
-		if(option==2)
-		{
-System.out.println("*****************************************\nWithdrawal\n*****************************************\nHow much would you like to deposit?\nEnter your number");
-			Integer toDeposit = myToolbox.readIntegerFromCmd();
-			System.out.print("*****************************************\n         Your new balance is ");
-			balance += toDeposit;
-			System.out.println(balance);
-			System.out.println("*****************************************");
+		else if(option==2) {
+			deposit();
 		}
-		if(option==3)
-		{
-			System.out.print("*****************************************\n         Your balance is ");
-			System.out.println(balance);
-			System.out.println("*****************************************");	
+		else if(option==3) {
+			inquire();
 		}
-		if(option==4)
-		{
-			System.out.println("******************************************\n         GoodBye\n******************************************");
+		else if(option==4) {
+			quit();
 		}
-		
+	}
+
+	public static void main(String[] Args) {
+		ATM myATM = new ATM(); //declaration of new object myATM of class ATM
+		myATM.go();
 	}
 }
