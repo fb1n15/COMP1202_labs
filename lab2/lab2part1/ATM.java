@@ -1,7 +1,14 @@
-public class ATM {
-	Integer balance = new Integer(0);
-	Toolbox myToolbox = new Toolbox();
+/**
+ * Implementation of ATM class for first part of the lab
+ * Lab 2 COMP1202.
+ * @author Wojciech Rozowski (wkr1u18)
+ */
 
+public class ATM {
+	private Integer balance = new Integer(0);
+	private Toolbox myToolbox = new Toolbox();
+
+	//Method displaying menu, taking user input, setting initial balance and invoking the correct method depending on the user's choice
 	public void go() {
 		System.out.println("Welcome to online ATM banking");
 		System.out.println("How much do you want in your account?");

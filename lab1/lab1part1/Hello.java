@@ -1,7 +1,11 @@
-public class Hello
-{
-	public static void main(String[] args)
-	{
+/**
+ * Implementation of Hello class for first part of the lab
+ * Lab 1 COMP1202.
+ * @author Wojciech Rozowski (wkr1u18)
+ */
+
+public class Hello {
+	public static void main(String[] args) {
 			System.out.println("Hello World!");
 	}
 }
