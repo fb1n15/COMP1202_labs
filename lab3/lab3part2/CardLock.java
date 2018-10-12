@@ -1,13 +1,18 @@
 
 /**
- * Implementation of CardLock class for part2 of lab3
+ * Implementation of CardLock class
  *
  * @author Wojciech Rozowski (wkr1u18)
  */
 public class CardLock {
-    private SmartCard lastSeen = null;
-    private Boolean isStudentAccessible = false;
+    private SmartCard lastSeen;
+    private Boolean isStudentAccessible;
     
+    //Constructor method, which initialises new door non-accessible to students, with no card last seen
+    public CardLock() {
+        lastSeen = null;
+        isStudentAccessible = false;
+    }
     //Mutator method for lastSeen instance variable
     public void swipeCard (SmartCard recentCard) {
         lastSeen = recentCard;
