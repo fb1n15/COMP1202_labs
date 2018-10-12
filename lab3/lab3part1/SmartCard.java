@@ -1,6 +1,6 @@
 /**
  * SmartCard Class implementation
- * @author Wojciech Rozowski (wk1u18)
+ * @author Wojciech Rozowski (wkr1u18)
  */
 
 public class SmartCard{
