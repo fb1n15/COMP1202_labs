@@ -4,7 +4,6 @@
  * @author Wojciech Rozowski (wkr1u18)
  */
 
-package lab5part3;
 import java.lang.String;
 import java.util.HashSet;
 import java.util.HashMap;

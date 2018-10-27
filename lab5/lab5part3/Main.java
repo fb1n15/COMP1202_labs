@@ -4,7 +4,6 @@
  * @author Wojciech Rozowski (wkr1u18)
  */
 
-package lab5part3;
 
 import java.util.Iterator;
 import java.util.Map;

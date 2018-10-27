@@ -4,7 +4,6 @@
  * @author Wojciech Rozowski (wkr1u18)
  */
 
-package lab5part1;
 import java.lang.String;
 
 public class WordGroup {

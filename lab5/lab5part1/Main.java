@@ -4,7 +4,6 @@
  * @author Wojciech Rozowski (wkr1u18)
  */
 
-package lab5part1;
 public class Main {
 	public static void main(String[] args) {
 		// Declaration and instantiation of two sample WordGroup objects
