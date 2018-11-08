@@ -9,6 +9,7 @@ public class Main {
 		//Part 1 of the exercise - using "for" loop program calculates the first 20 multiples of a number entered by user
 		System.out.println("Hello! What multiplication table would you like to have calculated?");
 		int number = myToolbox.readIntegerFromCmd();
+		//Create multiplication table using for loop
 		for(int i = 1; i <= 20; i++) {
 			System.out.print(i*number + ", ");
 		}
@@ -18,6 +19,7 @@ public class Main {
 		int currentNumber = 1;
 		int amountOfNumbers = 0;
 		int sumOfNumbers = 0;
+		//Calculate the desired sum through while loop
 		while(sumOfNumbers < 500) {
 			sumOfNumbers += currentNumber;
 			currentNumber++;

@@ -1,22 +1,29 @@
 /**
- * Implementation of WordGroup class for first part of the lab
- * Lab 5 COMP1202.
+ * Class for storing sentences and providing basic operations on them
  * @author Wojciech Rozowski (wkr1u18)
  */
 
 import java.lang.String;
 
 public class WordGroup {
- 	//instance variable
+ 	//Instance variable for storing sentence
  	private String words;
 
-	//Constructor takes string, converts it to lowercase and stores in instance variable words.
+ 	/**
+ 	 * Constructor initialising the words with lower-case converted String object
+ 	 * @param sentence {@link WordGroup} object for an another source for the words.
+ 	 */
 	public WordGroup(String sentence) {
+		//Uses String.toLowerCase() method
 		words = sentence.toLowerCase();
 	}
 	
-	//Method which returns array of strings created by splitting words instace variable
+	/**
+	 * Creates Array of String objects from stored sentence in object of that class.
+	 * @return Array of String objects with, where each entry is reserved for each word of the sentence stored in that class.
+	 */
 	public String[] getWordArray() {
+		//Uses String.split() method.
 		return words.split(" ",0);
 	}
 }

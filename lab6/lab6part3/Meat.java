@@ -1,13 +1,15 @@
 /**
- * Implementation of Meat class for the third part of the lab
- * Lab 6 COMP1202.
+ * Class for modelling meat. Inherits from {@link Food} class.
  * @author Wojciech Rozowski (wkr1u18)
  */
 
-
 public class Meat extends Food {
-	//Calls Food constructor
+	/**
+	 * Public contructor taking initial name for the meat.
+	 * @param initialName String containing meat's name
+	 */
 	public Meat(String initialName) {
+		//Calls Food class constructor
 		super(initialName);
 	}
 }

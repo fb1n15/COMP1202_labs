@@ -1,26 +1,34 @@
 /**
- * Lab4 part2 user class implementation
+ * Class storing multiple user's data and providing basic operations on collections of {@link}User objects
  * @author Wojciech Rozowski (wkr1u18)
+ *
  */
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserGroup {
-	//Private fields of class
+	//Arraylist contatining User objects
 	private ArrayList<User> userList;
 
-	//Constructor for userGroup class
+	/**
+	 * Public constructor for the class. It initialises the data structures.
+	 */
 	public UserGroup() {
 		userList = new ArrayList<User> ();
 	}
 
-	//Accessor to userList field
+	/**
+	 * Getter to ArrayList object storing {@link User} objects.
+	 * @return Stored ArrayList of User objects
+	 */
 	public ArrayList<User> getUsers() {
 		return userList;
 	} 
 	
-	//Method creating 10 sample User objects and inserts them into userList
+	/**
+	 * Method filling the ArrayList with sample User objects for testing purposes.
+	 */
 	public void addSampleData() {
 		userList.add(new User("jd1", "user", "John"));
 		userList.add(new User("m12", "editor", "Mike"));
@@ -34,13 +42,20 @@ public class UserGroup {
 		userList.add(new User("el54321", "user", "Elisabeth"));
 	}
 
-	//Returns User object being in userList ArrayList at position i
+	/**
+	 * This method accesses the data of specified user.
+	 * @param i Index of element in ArrayList object
+	 * @return {@link User} object stored in ArrayList on position i
+	 */
 	public User getUser(int i) {
 		return userList.get(i);
 	}
 
-	//Method printing all usernames and userTypes of User objects in userList array using enchanced for loop
+	/**
+	 * Prints all the user's information to standard output.
+	 */
 	public void printUsernames() {
+		//Iterates through ArrayList using enhanced for loop
 		for(User currentUser : userList) {
 			System.out.println(currentUser.getUsername() + " " + currentUser.getUserType());			
 		}
