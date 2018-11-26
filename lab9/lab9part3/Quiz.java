@@ -44,14 +44,20 @@ public class Quiz {
 	public void playFlashCard(FlashCard f) {
 		System.out.println(f.getQuestion());
 		String inputLine = myToolbox.readStringFromCmd();
+		String question = f.getQuestion();
+		//Remove all the commas not to fail unit test
+		if (question.contains(",")) {
+			question = question.replaceAll(",", "");
+		}
+		
 		if(inputLine.equals(f.getAnswer())) {
 			System.out.println("Correct!");
-			inputLine = f.getQuestion()+","+inputLine+",right";
+			inputLine = question+","+inputLine+",right";
 			totalScore++;
 		}
 		else {
 			System.out.println("Wrong! The correct answer is: " + f.getAnswer());
-			inputLine = f.getQuestion()+","+inputLine+",wrong";
+			inputLine = question+","+inputLine+",wrong";
 		}
 		userAnswers.add(inputLine);
 	}
@@ -64,7 +70,7 @@ public class Quiz {
 		for(FlashCard f: cardsList) {
 			playFlashCard(f);
 		}
-		if(answer.equals("yes")) {
+		if(answer.equals("Y")) {
 			save();
 		}
 
